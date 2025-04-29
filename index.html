@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경복궁 주변 안내 페이지</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul{
+        list-style-type: none;
+    }
+    #menu{
+        width:500px;
+        padding:10px;
+        margin:20px 0 0 40px;
+        background-color: #eeeeee;
+        border:solid 1px #aaaaaa;
+        text-align: center;
+        margin-left: 30px;
+    }
+    #menu li{
+        display: inline;
+    }
+    #menu2{
+        width:650px;
+        padding:10px;
+        margin:20px 0 0 40px;
+        background-color: #eeeeee;
+        border:solid 1px #aaaaaa;
+        text-align: center;
+        margin-left: 30px;
+    }
+    #menu2 li{
+        display: inline;
+    }
+    #banner{
+        width: 600px;
+        height: 200px;
+        background-repeat: no-repeat;
+        margin: 10px 10px 10px 30px;
+    }
+    h3{
+        margin-left: 30px;
+    }
+    #title{
+        border-bottom: dotted 2px #aaaaaa;
+        width: 600px;
+        margin-left: 30px;
+    }
+    .box1{
+        width: 600px;
+        height: 100px;
+        background-color: #b3fff6;
+        border:solid 1px #aaaaaa;
+        border-radius: 15px;
+        text-align: left;
+        padding: 10px;
+        margin-left: 30px;
+    }
+    .box2{
+        width: 600px;
+        height: 250px;
+        background-color: #b3fff6;
+        border:solid 1px #aaaaaa;
+        border-radius: 15px;
+        text-align: left;
+        padding: 15px;
+        margin-left: 30px;
+    }
+    .position{
+        display: inline-block; /*블록 방식의 태그를 수평으로 배치*/
+        text-align: center;
+        margin: 20px 30px 20px 30px;
+
+    }
+    .position img{
+        width: 200;
+        height: 200;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    #underline{
+        border-bottom: dotted 2px #aaaaaa;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+</style>
+<body>
+<ul id="menu2">
+    <li><a href="book.html">책 배너 만들기 |</a></li>
+    <li><a href="dispaly.html">디스플레이 |</a></li>
+    <li><a href="v_menu.html">수직방향 메뉴 |</a></li>
+    <li><a href="h_menu.html">수평방향 메뉴 |</a></li>
+    <li><a href="boxes.html">인라인과 블록특성 모두 갖게 하기</a></li>
+</ul>
+
+<ul id="menu">
+    <li>경복궁 소개 |</li>
+    <li>방문안내 |</li>
+    <li>관광안내 |</li>
+    <li>개인/단체 체험 |</li>
+    <li>고객센터 |</li>
+    <li>공지사항</li>
+</ul>
+   <img id="banner" src="경복궁.png">
+   <br>
+   <h2 id="title">+경복궁</h2>
+   <br>
+   <h3>1. 경복궁 소개</h3>
+   <div class="box1"><br>경복궁은 조선 왕조 제일의 법궁으로, 수도 서울의 중심이고 
+    <br>조선의 으뜸 궁궐인 경복궁에서 격조 높고 품위 있는 왕실 문화의 진수를 느껴볼 수 있습니다.</div>
+    <br>
+
+   <h3>2. 주변 놀거리</h3>
+
+   <ul class="position">
+    <li><img src="경복궁돌담길.jpg" width="200" height="200"></li>
+    <li id="underline">경복궁 돌담길</li>
+    <li>경복궁 돌담길은 우리나라 옛 건축물과 자연이 
+        <br>어우러지는 아름다운 산책로 입니다.</li>
+   </ul>
+
+   <ul class="position">
+    <li><img src="통인시장.jpeg" width="200" height="200"></li>
+    <li id="underline">통인시장</li>
+    <li>통인시장은 엽전으로 음식을 구매하고 쓰레기를 
+        <br>줄이기 위해 식판을 사용하는 특별한 시장입니다.</li>
+   </ul>
+
+   <ul class="position">
+    <li><img src="청와대사랑채.jpeg" width="200" height="200"></li>
+    <li id="underline">청와대 사랑채</li>
+    <li>사랑채의 아름다운 풍광과 조선 왕실 밤잔치의 화려함을
+        <br>모티브로 하여 구성된 전시를 진행중입니다.
+    </li>
+   </ul>
+
+   <h3>3. 오시는 길</h3>
+
+   <div class="box2">
+    <b>주소</b>
+    <br>(03045) 서울 종로구 사직로 161
+    <br><br>
+    <b>지하철</b>
+    <br>3호선 경복궁역 5번 출구 도보 2분
+    <br>3호선 안국역 1번출구 도보 6분
+    <br>5호선 광화문역 2번 출구 도보 6분
+    <br><br>
+    <b>버스</b>
+    <br>간선 109, 171, 272, 601, 606,710
+    <br>지선 1020, 7025
+   </div>
+</body>
+</html>
