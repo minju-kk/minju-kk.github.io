@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장르 별 도서</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'cafe';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: Arial;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        /*Header /Blog Title*/
+        .header{
+            padding: 30px;
+            text-align: center;
+            background: white;
+            color:#431a18;
+            font-family: 'cafe';
+            font-size: 16px;
+        }
+        .header h1{
+            font-size: 50px;
+        }
+        /*style the top navigation bar*/
+        .topnav{
+            overflow: hidden;
+            background-color: #290f0e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+        /*style the topnav links*/
+        .topnav ul{
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .topnav li{
+            display: inline;
+            
+        }
+        .topnav li a{
+            float: left;
+            display: inline-block;
+            color: #ddd;
+            text-align: center;
+            margin-inline-start: 20px;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*change color on hover*/
+        .topnav li a:hover{
+            background-color: #ddd;
+            color: #290f0e;
+        }
+        #main_menu {
+            justify-content: center;
+            flex: 1;
+            margin-left: 280px;
+        }
+        #small_menu{
+           float: right;
+        }
+        #small_menu li{
+            font-size: 12px;
+        }
+
+        /*creat two unequal columns that floats next to each otehr*/
+        /*left column*/
+        .leftcolumn{
+            float: left;
+            width: 100%;
+        }
+
+        /*Right cloumn
+        .rightcolumn{
+            float: left;
+            width: 25%;
+            background-color: #f1f1f1;
+            padding-left: 20px;
+        }*/
+
+        /*Fake image*/
+        /*.fakeimg{
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }*/
+    
+        /*Add a card effect for articles*/
+        .card{
+            background-color: beige;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .book_color{
+            background-color: white;
+            padding: 20px 0 20px 0;
+            
+        }
+        .book_list{
+            margin: 10px;
+            padding: 10px;
+            
+       }
+       .image{
+            float: left;
+        }
+        .image img{
+            width: 150px;
+            height: 200px;
+        }
+        .intro{
+            float: left;
+            width: 100px;
+            margin-left: 20px;
+        }
+        .book_info{
+            float: left;
+            width: 600px;
+        }
+        .book_info ul{
+            list-style-type: none;
+        }
+        .book_info li.small{
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .clear{
+            clear: both;
+
+        }
+        .line{
+            margin: 10px;
+            border-top: solid 1px #cccccc;
+        }
+
+
+        /*clear floats after the columns*/
+        .row:after{
+            content:"";
+            display: table;
+            clear: both;
+        }
+
+        /*Footer*/
+        .footer{
+            padding: 20px;
+            text-align: left;
+            background: #ddd;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+        .footer ul{
+            list-style-type: none;
+        }
+        #copyright{
+            color: #888888;
+        }
+
+
+
+
+        /*Responsive layout - when th screen is less than 800px wide, make th two column*/
+        @media screen and (max-width: 800px){
+            .leftcolumn, .rightcolumn{
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /*Responsive layout-when the screen is less than 400px wide, make th navigator*/
+        @media screen and (max-width: 400px){
+            .topnav a{
+                float: none;
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="img/logo.png" width="170"></a>
+        <p>일상의 작은 쉼터</p>
+    </div>
+
+    <div class="topnav">
+        <ul id="main_menu">
+            <li><a href="sub1.html">우리책방</a></li>
+            <li><a href="sub2.html">독서법</a></li>
+            <li><a href="sub3.html">장르 별 도서</a></li>
+            <li><a href="sub4.html">나의 책방</a></li>
+            <li><a href="sub5.html">독서기록</a></li>
+        </ul>
+        <ul id="small_menu">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="sub4.html">나의책방</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card"><!--노란배경-->
+                <!--SF장르-->
+                <h2>🛰️SF</h2>
+                <div class="book_color"><!--흰배경-->
+                    <!--도서1-->
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book1.html"><img src="img/book1.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 숨</li>
+                                <li>테드 창 저자(글) 김상훈 번역</li>
+                                <li class="small">엘리 2019년 05월 20일</li> 
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                   <!--도서2-->
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book2.html"><img src="img/book2.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 관내분실</li>
+                                <li>김초엽 저자(글) 김혜진 저자(글) 오정연 저자(글) 김선호 저자(글) 이루카 저자(글)</li>
+                                <li class="small">허블 2018년 03월 07일</li> 
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                    <!--도서3-->
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book3.html"><img src="img/book3.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 지구에서 한아뿐</li>
+                                <li>정세랑 저자(글)</li>
+                                <li class="small">난다 2019년 07월 31일</li> 
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="clear"></div>
+                </div>
+            
+                <!--판타지-->
+                <h2>🔮판타지</h2>
+                <div class="book_color"><!--흰배경-->
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book4.html"><img src="img/book4.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 해리포터와 죽음의 성물1 강동혁 번역</li>
+                                <li>조앤.K 롤링 저자(글)</li>
+                                <li class="small">문학수첩 2025년 04월 10일</li> 
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                    
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book5.html"><img src="img/book5.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 벤자민버튼의 시간은 거꾸로 간다</li>
+                                <li>프랜시스 스콧 피츠제럴드 저자(글) 허윤정 번역</li>
+                                <li class="small">더클래식 2020년 12월 01일</li> 
+                            </ul>
+                         </div>
+                    </div>
+                
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                    
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book6.html"><img src="img/book6.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 눈물을 마시는 새1</li>
+                                <li>이영도 저자(글)</li>
+                                <li class="small">황금가지 2003년 01월 03일</li> 
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="clear"></div>
+                </div>
+            
+
+                <!--영화/드라마 원작-->
+                <h2>🎬영화/드라마 원작</h2>
+                <div class="book_color"><!--흰배경-->
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book7.html"><img src="img/book7.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 파과</li>
+                                <li>구병모 저자(글)</li>
+                                <li class="small">위즈덤하우스 2018년 04월 16일</li> 
+                            </ul>
+                        </div>
+                    </div>
+            
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                    
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book8.html"><img src="img/book8.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 대도시의 사랑법</li>
+                                <li>박상영 저자(글)</li>
+                                <li class="small">창비 2019년 07월 23일</li> 
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="clear"></div>
+                    <div class="line"></div>
+
+                    
+                    <div class="book_list">
+                        <div class="image"><a href="sub3_book9.html"><img src="img/book9.jpg"></a></div>
+                        <div class="book_info">
+                            <ul>
+                                <li>[국내도서] 파친코</li>
+                                <li>이민진 저자(글) 신승미 번역</li>
+                                <li class="small">인플루앤셜 2022년 08월 05일</li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="footer">
+        <article id="address">
+            <ul id="footer_menu">
+                <li>개인정보 취급방침 | 이용 안내 | 이메일 무단수집 거부</li>
+            </ul>
+            <ul id="company_info">
+                <li>우리책방</li>
+                <li>주소: 경기도 성남시 수정구 성남대로 1342</li>
+                <li>전화: (02)123-1234, FAX: (02)123-1234</li>
+                <li id="copyright">Copyright by 우리책방 Company All Rights Reserved</li>
+            </ul>
+        </article>
+    </div>
+</body>
+</html>

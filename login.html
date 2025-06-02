@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'cafe';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        #login_form{
+            margin: 0 auto;
+            width: 660px;
+        }
+        #login_title{
+            width: 600px;
+            padding: 10px;
+            margin: 50px;
+            font-size: 20px;
+            border: solid 5px #431a18;
+        }
+        #login_box{
+            width: 600px;
+            height: 283px;
+            margin: 20px 0 0 50px;
+            border: solid 2px #cccccc;
+            border-radius: 20px;
+        }
+        #left{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        #right {
+            display: inline-block;
+            margin-left: 50px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #id_pass,
+        #login_btn {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 40px;
+        }
+        #id_pass ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        #id_pass li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        #id_pass span {
+            display: inline-block;
+            width: 70px;
+        }
+
+        #id_pass input {
+            width: 180px;
+            height: 26px;
+        }
+                
+
+
+        #id_pass input {
+            width: 130px;
+            height: 20px;
+        }
+
+        #pass {
+            margin-top: 3px;
+        }
+
+        #auto_login {
+            margin: 15px 0 0 25px;
+        }
+
+        #login_find {
+            margin: 25px 0 0 20px;
+        }
+
+        #join_find li {
+            padding: 2px;
+            list-style-type: disc;
+        }
+
+        #login_form{
+            margin: 0 auto;
+            width: 650px;
+        }
+
+
+
+        /*Header /Blog Title*/
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: white;
+            color: #431a18;
+            font-family: 'cafe';
+            font-size: 16px;
+        }
+
+        .header h1 {
+            font-size: 50px;
+        }
+
+        /*style the top navigation bar*/
+        .topnav{
+            overflow: hidden;
+            background-color: #290f0e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+        /*style the topnav links*/
+        .topnav ul{
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .topnav li{
+            display: inline;
+            
+        }
+        .topnav li a{
+            float: left;
+            display: inline-block;
+            color: #ddd;
+            text-align: center;
+            margin-inline-start: 20px;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*change color on hover*/
+        .topnav li a:hover{
+            background-color: #ddd;
+            color: #290f0e;
+        }
+        #main_menu {
+            justify-content: center;
+            flex: 1;
+            margin-left: 280px;
+        }
+        #small_menu{
+           float: right;
+        }
+        #small_menu li{
+            font-size: 12px;
+        }
+        /*creat two unequal columns that floats next to each otehr*/
+        /*left column*/
+        .leftcolumn {
+            float: left;
+            width: 100%;
+        }
+
+        #introducing {
+            background-color: beige;
+            box-shadow: 4px 4px 5px #888888;
+        }
+
+        #introducing p {
+            padding: 40px 0 0 30px;
+        }
+
+        /*Add a card effect for articles*/
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            height: auto;
+
+        }
+      
+
+        /*clear floats after the columns*/
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /*Footer*/
+        .footer {
+            padding: 20px;
+            text-align: left;
+            background: #ddd;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+
+        .footer ul {
+            list-style-type: none;
+        }
+
+        #copyright {
+            color: #888888;
+        }
+
+
+
+
+        /*Responsive layout - when th screen is less than 800px wide, make th two column*/
+        @media screen and (max-width: 800px) {
+
+            .leftcolumn,
+            .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /*Responsive layout-when the screen is less than 400px wide, make th navigator*/
+        @media screen and (max-width: 400px) {
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="img/logo.png" width="170"></a>
+        <p>일상의 작은 쉼터</p>
+    </div>
+
+    <div class="topnav">
+        <ul id="main_menu">
+            <li><a href="sub1.html">우리책방</a></li>
+            <li><a href="sub2.html">독서법</a></li>
+            <li><a href="sub3.html">장르 별 도서</a></li>
+            <li><a href="sub4.html">나의 책방</a></li>
+            <li><a href="sub5.html">독서기록</a></li>
+        </ul>
+        <ul id="small_menu">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="sub4.html">나의책방</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <div id="login_form">
+                    <h2 id="login_title">로그인</h2>
+                    <div id="login_box">
+                        <div id="left">
+                            <img src="img/key.png">
+                        </div>
+                        <div id="right">
+                            <ul id="input_button">
+                                <li id="id_pass">
+                                    <ul>
+                                        <li>
+                                            <span>아 이 디</span>
+                                            <input type="text">
+                                        </li><!--id-->
+                                        <li id="pass">
+                                            <span>비밀번호</span>
+                                            <input type="password">
+                                        </li><!--pass-->
+                                    </ul>
+                                </li><!--id_pass-->
+                                <li id="login_btn">
+                                    <img src="img/login_img2.png" width="97" height="54">
+                                </li>
+                            </ul>
+                            <div id="auto_login">
+                                <input type="checkbox">자동 로그인
+                            </div>
+                    
+                            <ul id="join_find">
+                                <li>아직 회원이 아니세요?</li>
+                                <li>아이디 또는 비밀번호를 잊으셨나요?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <article id="address">
+            <ul id="footer_menu">
+                <li>개인정보 취급방침 | 이용 안내 | 이메일 무단수집 거부</li>
+            </ul>
+            <ul id="company_info">
+                <li>우리책방</li>
+                <li>주소: 경기도 성남시 수정구 성남대로 1342</li>
+                <li>전화: (02)123-1234, FAX: (02)123-1234</li>
+                <li id="copyright">Copyright by 우리책방 Company All Rights Reserved</li>
+            </ul>
+        </article>
+    </div>
+</body>
+
+</html>

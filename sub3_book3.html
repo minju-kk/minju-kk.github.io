@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서 상세보기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'cafe';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: Arial;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+        /*Header /Blog Title*/
+        .header{
+            padding: 30px;
+            text-align: center;
+            background: white;
+            color:#431a18;
+            font-family: 'cafe';
+            font-size: 16px;
+        }
+        .header h1{
+            font-size: 50px;
+        }
+        /*style the top navigation bar*/
+        .topnav{
+            overflow: hidden;
+            background-color: #290f0e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+        /*style the topnav links*/
+        .topnav ul{
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .topnav li{
+            display: inline;
+            
+        }
+        .topnav li a{
+            float: left;
+            display: inline-block;
+            color: #ddd;
+            text-align: center;
+            margin-inline-start: 20px;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*change color on hover*/
+        .topnav li a:hover{
+            background-color: #ddd;
+            color: #290f0e;
+        }
+        #main_menu {
+            justify-content: center;
+            flex: 1;
+            margin-left: 280px;
+        }
+        #small_menu{
+           float: right;
+        }
+        #small_menu li{
+            font-size: 12px;
+        }
+
+        /*creat two unequal columns that floats next to each otehr*/
+        /*left column*/
+        .leftcolumn{
+            float: left;
+            width: 100%;
+        }
+
+        
+        /*Add a card effect for articles*/
+        .card{
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            overflow: auto;
+        }
+        .card h3{
+            /*margin-left: 200px;*/
+            margin: auto;
+            border-bottom: solid 3px #431a18;
+            padding: 15px;
+            width: 1050px;
+        }
+        .book{
+            float: left;
+            margin: 40px 50px 0 0;
+            
+           
+        }
+        #book_box{
+            margin: auto;
+        }
+        .book img{
+            float: left;
+            margin: 20px 0 0 200px;
+            border: solid 1px #888888;
+            width: 200px;
+            height: 300px;
+            
+        }
+        .book_info{
+            
+            float: left;
+            margin-top: 60px;
+            width: 810px;
+        }
+        
+        
+        .book_info ul{
+            list-style-type: none;
+        }
+        .book_title{
+            font-weight: bold;
+            color: #290f0e;
+            font-size: 18px;
+        }
+        .author{
+            margin-top: 5px;
+            color:#431a18;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .plot{
+            margin-top: 5px;
+            color:#431a18;
+            font-size: 17px;
+        }
+        #plot_t{
+            color:#431a18;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .btn a{
+            
+            border: solid 3px #431a18;
+            border-radius: 50px;
+            width: 150px;
+            text-align: center;
+            background-color: beige;
+            color: #290f0e;
+            font-size: 20px;
+            font-weight: bold;
+            float: left;
+            padding: 10px;
+            margin: 30px 30px 0 0;
+            text-decoration-line: none;
+        }
+        .btn a:hover{
+            background-color: #bbbbbb;
+        }
+        .pre_btn a{
+
+            border-radius: 50px;
+            width: 100px;
+            text-align: center;
+            background-color: #431a18;
+            color: beige;
+            font-size: 18px;
+            float: left;
+            padding: 10px;
+            margin: 30px 30px 0 280px;
+            text-decoration-line: none;
+        }
+        .pre_btn a:hover{
+            background-color: #888888;
+        }
+               
+      
+        /*clear floats after the columns*/
+        .row:after{
+            content:"";
+            display: table;
+            clear: both;
+        }
+
+        /*Footer*/
+        .footer{
+            padding: 20px;
+            text-align: left;
+            background: #ddd;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+        .footer ul{
+            list-style-type: none;
+        }
+        #copyright{
+            color: #888888;
+        }
+
+        /*Responsive layout - when th screen is less than 800px wide, make th two column*/
+        @media screen and (max-width: 800px){
+            .leftcolumn, .rightcolumn{
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /*Responsive layout-when the screen is less than 400px wide, make th navigator*/
+        @media screen and (max-width: 400px){
+            .topnav a{
+                float: none;
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="img/logo.png" width="170"></a>
+        <p>일상의 작은 쉼터</p>
+    </div>
+
+    <div class="topnav">
+        <ul id="main_menu">
+            <li><a href="sub1.html">우리책방</a></li>
+            <li><a href="sub2.html">독서법</a></li>
+            <li><a href="sub3.html">장르 별 도서</a></li>
+            <li><a href="sub4.html">나의 책방</a></li>
+            <li><a href="sub5.html">독서기록</a></li>
+        </ul>
+        <ul id="small_menu">
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="sub4.html">나의책방</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h3>도서 상세보기</h3>
+                    <div id="book_box">
+                        <div class="book"><img src="img/book3.jpg"></div>
+                        <div class="book_info">
+                            <ul>
+                                <li class="book_title"><h2>도서: 지구에서 한아뿐</h2></li>
+                                <li class="author">작가: 정세랑</li>
+                                <li class="plot"><span id="plot_t">줄거리: </span>칫솔에 근사할 정도로 적당량의 치약을 묻혀 건네는 모습에 감동하는 한아는 저탄소생활을 몸소 실천하는 의류 리폼 디자이너다.
+                                    '환생'이라는 작은 옷 수선집을 운영하며 누군가의 이야기와 시간이 담긴 옷에 작은 새로움을 더해주곤 하는 한아에게는 스무 살 때부터 좋아한, 만난 지 11년 된 남자친구 경민이 있다.
+                                    늘 익숙한 곳에 머무르려 하는 한아와 달리 자유분방하게 살아가는 경민은 이번 여름에도 혼자 유성우를 보러 캐나다로 훌쩍 떠나버린다. 자신의 사정을 고려해주지 않는 경민이 늘 서운했지만 
+                                    체념이라고 부르는 애정도 있는 것이라 생각하던 때, 캐나다에 운석이 떨어져 소동이 벌어지고, 경민은 무사히 돌아왔지만 어딘지 미묘하게 낯설어졌다. 팔에 있던 커다란 흉터가 사라졌는가 하면 
+                                    그렇게나 싫어하던 가지무침도 맛있게 먹는다. 그리고 무엇보다도 한아를 늘 기다리게 했던 그였는데 이제는 매순간 한아에게 집중하며 조금 더 함께 있는 듯한 기분을 준다. 달라진 경민의 모습과 수상한 행동이 의심스러운 한아는 무언가가 잘못되어간다고 혼란에 빠지는데…….</li>
+                                <li class="btn"><a href="sub4.html">+읽고싶은 책</a></li>
+                                <li class="btn"><a href="sub4.html">+읽은 책</a></li>
+                                <li class="pre_btn"><a href="sub3.html">이전으로</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <article id="address">
+            <ul id="footer_menu">
+                <li>개인정보 취급방침 | 이용 안내 | 이메일 무단수집 거부</li>
+            </ul>
+            <ul id="company_info">
+                <li>우리책방</li>
+                <li>주소: 경기도 성남시 수정구 성남대로 1342</li>
+                <li>전화: (02)123-1234, FAX: (02)123-1234</li>
+                <li id="copyright">Copyright by 우리책방 Company All Rights Reserved</li>
+            </ul>
+        </article>
+    </div>
+</body>
+</html>
